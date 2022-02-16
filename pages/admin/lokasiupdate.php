@@ -74,7 +74,7 @@ if (isset($_GET['id']) && $_GET['id'] <> '') {
                         <div class="form-group">
                             <label for="nama_lokasi">Nama Lokasi</label>
                             <input type="hidden" name="id" class="form-control" value="<?php echo $row['id'] ?>">
-                            <input type"text" name="nama_lokasi" class="form-control" value="<?php echo $row['nama_lokasi'] ?>">
+                            <input type="text" name="nama_lokasi" class="form-control" value="<?php echo $row['nama_lokasi'] ?>">
                         </div>
                         <a href="?page=lokasiread" class="bth btn-danger btn-sm float-right ml-2">
                             <i class="fa fa-times"></i> Batal
