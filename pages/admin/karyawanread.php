@@ -61,6 +61,7 @@
                         <th>Nama Karyawan</th>
                         <th>Bagian</th>
                         <th>Jabatan</th>
+                        <th>Tanggal Masuk</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -70,6 +71,7 @@
                         <th>Nama Karyawan</th>
                         <th>Bagian</th>
                         <th>Jabatan</th>
+                        <th>Tanggal Masuk</th>
                         <th>Opsi</th>
                     </tr>
                 </tfoot>
@@ -85,12 +87,14 @@
 
                     $no = 1;
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $tanggal = date_create($row['tanggal_masuk']);
                     ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['nama_lengkap'] ?></td>
                             <td><?php echo $row['bagian_terkini'] ?></td>
                             <td><?php echo $row['jabatan_terkini'] ?></td>
+                            <td><?php echo date_format($tanggal, "d M` Y"); ?></td>
                             <td>
                                 <a href="?page=karyawanupdate&id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
                                     <i class="fa fa-edit"></i> Ubah
